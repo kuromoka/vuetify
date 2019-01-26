@@ -324,7 +324,7 @@ export const camelize = (str: string): string => {
   return str.replace(camelizeRE, (_, c) => c ? c.toUpperCase() : '')
 }
 
-export function groupByProperty (xs: any[], key: string) {
+export function groupByProperty (xs: any[], key: string): Record<string, any[]> {
   return xs.reduce((rv, x) => {
     (rv[x[key]] = rv[x[key]] || []).push(x)
     return rv
